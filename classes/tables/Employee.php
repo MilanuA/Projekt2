@@ -104,7 +104,8 @@ class Employee
 
     public  function  updateEmployee() : bool {
 
-        $admin = $this->isAdmin == 1 ? "1" : "0";
+        $logged =  $_SESSION["userID"] == $this->employeeID;
+        $admin = $logged ? "1" : ($this->isAdmin == 1 ? "1" : "0");
 
         $updateEmployeeInfo = Database::checkSuccess("UPDATE employee SET name= :name, surname= :surname, job = :job, wage = :wage, room = :room, login =  :login, admin = :admin WHERE employee_id = :id",
             ['name' => $this->name, 'surname' => $this->surname, 'job' => $this->job, 'wage' => $this->wage, 'room' => $this->room, 'id' => $this->employeeID, 'login' => $this->login, 'admin' => $admin ]);
