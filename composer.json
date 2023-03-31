@@ -1,0 +1,7 @@
+{
+    "require": {
+        "tracy/tracy": "^2.10",
+        "hassankhan/config": "^3.1",
+      "ext-pdo": "*"
+    }
+}

@@ -1,0 +1,10 @@
+/vendor/
+composer.lock
+./idea/
+/config/localConfig.json
+.idea/workspace.xml
+.idea/jsLibraryMappings.xml
+.idea/modules.xml
+.idea/php.xml
+.idea/projekt_ii.iml
+.idea/vcs.xml

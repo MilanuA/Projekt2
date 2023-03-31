@@ -1,0 +1,12 @@
+{
+  "app": {
+    "lang" : "cs"
+  },
+  "db": {
+    "host" : "127.0.0.1",
+    "database" : "",
+    "charset" : "utf8mb4",
+    "user" : "",
+    "password" : ""
+  }
+}
