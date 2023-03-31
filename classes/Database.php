@@ -14,11 +14,11 @@ class Database
     #region initialize pdo
     //vypůjčeno =)
     private static function initializePDO() : PDO{
-        $host = "";
-        $db = "";
-        $user = "";
-        $pass = "";
-        $charset = "";
+        $host = "127.0.0.1";
+        $db = "fill db connection";
+        $user = "fill db user";
+        $pass = "fill db password";
+        $charset = "utf8mb4";
 
         $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 
