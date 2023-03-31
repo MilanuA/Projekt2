@@ -35,14 +35,14 @@ class Login
 
        $hash = password_hash($data["pass1"], PASSWORD_DEFAULT, array('cost' => 15));
 
-       return database::checkSuccess($updateSQL, ['newPassword' =>$hash, 'id' =>$_SESSION["userID"]]);
+       return Database::checkSuccess($updateSQL, ['newPassword' =>$hash, 'id' =>$_SESSION["userID"]]);
     }
 
     //kontrola, zda se obě hesla shodují a jestli je nynější heslo stejné s heslem v databázi.
     private static  function checkPassword($data) : bool {
         if($data["pass1"] !== $data["pass2"]) {echo self::error("Hesla ne neshodují");; return false; }
 
-        $password = database::select("SELECT password FROM employee WHERE employee_id = :id", ['id' =>$_SESSION["userID"]] );
+        $password = Database::select("SELECT password FROM employee WHERE employee_id = :id", ['id' =>$_SESSION["userID"]] );
 
         if(!password_verify($data["currPassword"],$password->password) ) {echo self::error("Heslo se neshoduje s uloženým heslem"); return false;}
 
